@@ -5,6 +5,18 @@ def factorial(n):
         return 1
     return factorial(n - 1) * n
 
+# Private method for check is prime number or return 1
+def isprnum(x):
+    if x > 1:
+        out = True
+        for i in range(2, x):
+            if x % i == 0:
+                out = False
+        if out:
+            return x
+
+    return 1
+
 # Factorial
 def fac(x):
     if x < 0:
@@ -38,4 +50,19 @@ def supf(m):
     out = 1
     for x in range(2, int(m)+1):
         out *= fac(x)
+    return out
+
+# Primorial
+def prim(m):
+    out = 1
+    i = 1
+    for k in range(int(m)):
+        while True:
+            if isprnum(i) != 1:
+                out *= i
+                i += 1
+                print(i)
+                break
+            else:
+                i += 1
     return out
