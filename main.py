@@ -1,8 +1,7 @@
-def fac(n):
-  if n == 0:
-    return 1
-  return fac(n-1)*n
+def fac(x):
+    def factorial(n):
+        if n == 0:
+            return 1
+        return factorial(n - 1) * n
 
-x = float(input())
-
-print(fac(int(x))*(int(x)+1)**(x-int(x)))
+    return factorial(int(x)) * (int(x) + 1) ** (x - int(x))
