@@ -61,8 +61,20 @@ def prim(m):
             if isprnum(i) != 1:
                 out *= i
                 i += 1
-                print(i)
                 break
             else:
                 i += 1
     return out
+
+# Subfactorial
+def subf(x):
+    out = fac(x)
+    buf = 1
+
+    for i in range(1, x+1):
+        if i % 2 == 0:
+            buf += (1/fac(i))
+        else:
+            buf -= (1/fac(i))
+
+    return int(out * buf)
