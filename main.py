@@ -10,10 +10,12 @@ def fac(x):
     elif (x >= 0) and (x <= 1):
         return 1
     elif int(x) == x:
-        if x >= 997:
-            return "Error: number >= 997"
-        return factorial(x)
+        try:
+            return factorial(x)
+        except RecursionError:
+            return "Error: large number"
     else:
-        if x >= 170.62421348621231:
+        try:
+            return factorial(int(x)) * (int(x) + 1) ** (x - int(x))
+        except OverflowError:
             return "Error: factorial goes beyond float type"
-        return factorial(int(x)) * (int(x) + 1) ** (x - int(x))
